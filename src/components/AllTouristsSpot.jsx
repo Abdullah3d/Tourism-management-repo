@@ -1,8 +1,9 @@
 
 const AllTouristsSpot = () => {
     return (
-        <div className="bg-[#F4F3F0] p-24">
-            <h2 className="text-3xl font-extrabold">Add Country</h2>
+        <div className="bg-[#ABABAB] p-24">
+            <h2 className="text-3xl text-center mb-5 font-extrabold">All Tourists spot</h2>
+            <p className="text-center mb-8 font-semibold text-xl">Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br/>Soluta, quos earum animi quod nobis eum, necessitatibus, cum blanditiis <br/>deleniti ad reiciendis. Recusandae quas ipsa facilis error, quod iure optio quae.</p>
             <form>
                 {/* from row name and tourist*/}
                 <div className="md:flex">

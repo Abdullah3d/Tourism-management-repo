@@ -6,8 +6,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import AddCountry from './components/AddCountry.jsx';
-import UpdateCountry from './components/UpdateCountry.jsx';
 import Root from './pages/Root.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import AllTouristsSpot from './components/AllTouristsSpot.jsx';
@@ -17,6 +15,7 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import PrivetRoute from './Provider/PrivetRoute.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
+import TouristsSpot from './components/TouristsSpot.jsx';
 const router = createBrowserRouter([
 
   {
@@ -29,12 +28,8 @@ const router = createBrowserRouter([
         element: <App></App>,
       },
       {
-        path: "addCountry",
-        element: <AddCountry></AddCountry>
-      },
-      {
-        path: "updateCountry",
-        element: <UpdateCountry></UpdateCountry>
+        path: "touristsSpot",
+        element: <TouristsSpot></TouristsSpot>
       },
       {
         path: "allTouristsSpot",
