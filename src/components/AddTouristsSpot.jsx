@@ -68,11 +68,8 @@ const AddTouristsSpot = () => {
                     Add Tourists spot
                 </h2>
                 <p className="text-center mb-8 font-semibold text-xl">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
-                    Soluta, quos earum animi quod nobis eum, necessitatibus, cum blanditiis{" "}
-                    <br />
-                    deleniti ad reiciendis. Recusandae quas ipsa facilis error, quod iure
-                    optio quae.
+
+                    Popular tourist spots on Saint Martin's Island include the stunning Sunset Point, <br/>vibrant Chera Dwip Beach, and the natural beauty of Blue Lagoon. Each <br/>offers unique experiences amidst the island's captivating scenery.
                 </p>
                 <form onSubmit={handleAddTourists}>
                     {/* from row name and tourist*/}

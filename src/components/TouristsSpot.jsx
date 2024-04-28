@@ -16,7 +16,7 @@ const TouristsSpot = () => {
         const travel = form.travel.value;
         const photo = form.photo.value;
 
-        const newSpot = { name, country, description, location, season, travel, photo}
+        const newSpot = { name, country, description, location, season, travel, photo }
         console.log(newSpot);
 
 
@@ -28,22 +28,22 @@ const TouristsSpot = () => {
             },
             body: JSON.stringify(newSpot)
         })
-        .then(res => res.json())
-        .then( data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: "Good job!",
-                    text: "User Added Successfully",
-                    icon: "success"
-                  });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "User Added Successfully",
+                        icon: "success"
+                    });
+                }
+            })
     }
     return (
         <div className="bg-[#ABABAB] p-24">
             <h2 className="text-3xl text-center mb-5 font-extrabold">Tourists spot</h2>
-            <p className="text-center mb-8 font-semibold text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Cum vitae aut assumenda repellat porro tenetur eaque sequi, nulla laborum maxime <br />nobis perspiciatis eos, natus accusamus voluptatem qui consectetur nostrum culpa.</p>
+            <p className="text-center mb-8 font-semibold text-xl">Saint Martin's Island, a coveted tourist spot, enchants visitors with<br/> its pristine beaches, azure waters, and vibrant coral reefs. Sunset Point,<br/> Chera Dwip Beach, and Blue Lagoon beckon travelers seeking natural beauty and relaxation.</p>
             <form onSubmit={handleTouristSpot}>
                 {/* from row name and tourist*/}
                 <div className="md:flex mb-8">

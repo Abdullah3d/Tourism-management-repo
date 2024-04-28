@@ -18,30 +18,30 @@ const Register = () => {
         const name = form.get('name');
         const photo = form.get('photo');
         const password = form.get('password');
-        // // console.log(name, photo, email, password);
+        console.log(name, photo, email, password);
 
-        // if (password.length < 6) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Oops...",
-        //         text: "Something went wrong!",
-        //     });
-        //     return;
-        // }
-        // else if (/[A-Z]/.test(password)) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Oops...",
-        //         text: "Something went wrong!",
-        //     }); return;
-        // }
-        // else if (/[a-z]/.test(password)) {
-        //     Swal.fire({
-        //         icon: "error",
-        //         title: "Oops...",
-        //         text: "Something went wrong!",
-        //     }); return;
-        // }
+        if (password.length < 6) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your password should have 6 character",
+            });
+            return;
+        }
+        else if (/[A-Z]/.test(password)) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your password should have One Uppercase Character",
+            }); return;
+        }
+        else if (/[a-z]/.test(password)) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your password should have One lowercase Character",
+            }); return;
+        }
 
         setRegisterError('');
         setSuccess('');

@@ -23,8 +23,6 @@ console.log(user?.photoURL)
     </>
   )
 
-
-
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
