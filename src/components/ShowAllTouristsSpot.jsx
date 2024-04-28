@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 const ShowAllTouristsSpot = ({ tourist }) => {
     const { _id, name, country, description, average, location, season, travel, photo, total } = tourist;
     return (

@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
+import { VscGithubInverted } from "react-icons/vsc";
+
+
 
 const Login = () => {
     const [registerError, setRegisterError] = useState('');
@@ -97,9 +101,9 @@ const Login = () => {
                 success && <p className="text-green-600 text-bold text-center">{success}</p>
             }
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
-            <div className="flex font-bold justify-center mt-5 gap-5">
-                <p className="bg-purple-100 text-purple-500"><button onClick={handleGoogleSignIn} className="btn btn-ghost">Google</button></p>
-                <p className="bg-purple-100 text-purple-500"><button onClick={handleGithubSignIn} className="btn btn-ghost">Github Login</button></p>
+            <div className="flex font-bold justify-center mt-5 gap-10">
+                <p className="text-5xl"><button onClick={handleGoogleSignIn} className=""><FcGoogle/></button></p>
+                <p className="text-5xl"><button onClick={handleGithubSignIn} className=""><VscGithubInverted/></button></p>
             </div>
             <Footer></Footer>
         </div>
