@@ -3,8 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-
-  const { user, logOut } = useContext(AuthContext);
+const { user, logOut } = useContext(AuthContext);
 console.log(user?.photoURL)
   const handleSignOut = () => {
     logOut()
