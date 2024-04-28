@@ -1,14 +1,13 @@
 import { useLoaderData } from "react-router-dom";
+import ShowAllTouristsSpot from "./ShowAllTouristsSpot";
 
 const AllTouristsSpot = () => {
     const tourists = useLoaderData()
     console.log(tourists);
     return (
-        <div>
+        <div className="grid grid-cols-2 gap-4 p-5">
             {
-                tourists.map(touirst => (
-                    <h2 key={touirst._id}>{touirst.country} </h2>
-                ))
+                tourists.map( tourist => <ShowAllTouristsSpot key={tourist._id} tourist={tourist} ></ShowAllTouristsSpot> )
             }
         </div >
     );

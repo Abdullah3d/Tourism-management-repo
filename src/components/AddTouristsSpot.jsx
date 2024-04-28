@@ -16,6 +16,7 @@ const AddTouristsSpot = () => {
         const travel = form.travel.value;
         const email = form.email.value;
         const user = form.user.value;
+        const total = form.total.value;
         const photo = form.photo.value;
 
         const addTourist = {
@@ -28,6 +29,7 @@ const AddTouristsSpot = () => {
             travel,
             email,
             user,
+            total,
             photo,
         };
         console.log(addTourist);
@@ -69,7 +71,7 @@ const AddTouristsSpot = () => {
                 </h2>
                 <p className="text-center mb-8 font-semibold text-xl">
 
-                    Popular tourist spots on Saint Martin's Island include the stunning Sunset Point, <br/>vibrant Chera Dwip Beach, and the natural beauty of Blue Lagoon. Each <br/>offers unique experiences amidst the island's captivating scenery.
+                    Popular tourist spots on Saint Martin's Island include the stunning Sunset Point, <br />vibrant Chera Dwip Beach, and the natural beauty of Blue Lagoon. Each <br />offers unique experiences amidst the island's captivating scenery.
                 </p>
                 <form onSubmit={handleAddTourists}>
                     {/* from row name and tourist*/}
@@ -143,7 +145,6 @@ const AddTouristsSpot = () => {
                                     placeholder="average cost"
                                     className="input input-bordered w-full"
                                 />
-                                ```javascript
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -164,13 +165,13 @@ const AddTouristsSpot = () => {
                     <div className="md:flex">
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span>Travel mode</span>
+                                <span>Travel time</span>
                             </label>
                             <label className="input-group">
                                 <input
                                     type="text"
                                     name="travel"
-                                    placeholder="travel mode"
+                                    placeholder="travel time"
                                     className="input input-bordered w-full"
                                 />
                             </label>
@@ -193,7 +194,7 @@ const AddTouristsSpot = () => {
                     <div className="md:flex">
                         <div className="form-control md:w-1/2">
                             <label className="label">
-                                <span>User</span>
+                                <span>User Name</span>
                             </label>
                             <label className="input-group">
                                 <input
@@ -204,19 +205,34 @@ const AddTouristsSpot = () => {
                                 />
                             </label>
                         </div>
+                        
                         <div className="form-control md:w-1/2 ml-4">
                             <label className="label">
-                                <span>Photo URL</span>
+                                <span> Total Visitors PerYear</span>
                             </label>
                             <label className="input-group">
                                 <input
                                     type="text"
-                                    name="photo"
-                                    placeholder="photo URL"
+                                    name="total"
+                                    placeholder=" totalVisitorsPerYear"
                                     className="input input-bordered w-full"
                                 />
                             </label>
                         </div>
+                    </div>
+                    {/*  */}
+                    <div className="form-control md:w-full ">
+                        <label className="label">
+                            <span>Photo URL</span>
+                        </label>
+                        <label className="input-group">
+                            <input
+                                type="text"
+                                name="photo"
+                                placeholder="photo URL"
+                                className="input input-bordered w-full"
+                            />
+                        </label>
                     </div>
                     {/* from row */}
                     <div className="form-control mt-6">
