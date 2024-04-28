@@ -16,6 +16,7 @@ import Register from './pages/Register.jsx';
 import PrivetRoute from './Provider/PrivetRoute.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import TouristsSpot from './components/TouristsSpot.jsx';
+import ViewTouristsSpot from './components/ViewTouristsSpot.jsx';
 const router = createBrowserRouter([
 
   {
@@ -26,6 +27,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App></App>,
+        loader: () => fetch('http://localhost:5000/tourist')
+      },
+      {
+        path: "view/:id",
+        element: <PrivetRoute><ViewTouristsSpot></ViewTouristsSpot></PrivetRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/tourist/${params.id}`)
       },
       {
         path: "touristsSpot",
