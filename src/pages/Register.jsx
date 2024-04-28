@@ -28,19 +28,36 @@ const Register = () => {
             });
             return;
         }
-        else if (/[A-Z]/.test(password)) {
+        // else if (/[A-Z]/.test(password)) {
+        //     Swal.fire({
+        //         icon: "error",
+        //         title: "Oops...",
+        //         text: "Your password should have One Uppercase Character",
+        //     }); return;
+        // }
+        //else if (/[a-z]/.test(password)) {
+        //Swal.fire({
+        // icon: "error",
+        // title: "Oops...",
+        // text: "Your password should have One lowercase Character",
+        //}); return;
+        //}
+
+        if (!/[A-Z]/.test(password)) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Your password should have One Uppercase Character",
-            }); return;
+                text: "Your password should have at least one uppercase character",
+            });
+            return;
         }
-        else if (/[a-z]/.test(password)) {
+        else if (!/[a-z]/.test(password)) {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Your password should have One lowercase Character",
-            }); return;
+                text: "Your password should have at least one lowercase character",
+            });
+            return;
         }
 
         setRegisterError('');
