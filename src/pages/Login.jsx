@@ -44,7 +44,7 @@ const Login = () => {
         setIsLoading(true);
         signInWithGoogle()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 setIsLoading(false);
             })
             .catch(error => {
@@ -61,7 +61,7 @@ const Login = () => {
                 setIsLoading(false);
             })
             .catch(error => {
-                console.error(error)
+                // console.error(error)
                 setIsLoading(false);
             })
     }
