@@ -17,6 +17,7 @@ import PrivetRoute from './Provider/PrivetRoute.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import TouristsSpot from './components/TouristsSpot.jsx';
 import ViewTouristsSpot from './components/ViewTouristsSpot.jsx';
+import Update from './components/Update.jsx';
 const router = createBrowserRouter([
 
   {
@@ -51,6 +52,12 @@ const router = createBrowserRouter([
         path: "myList",
         element: <PrivetRoute><MyList></MyList></PrivetRoute>,
         loader: () => fetch('http://localhost:5000/mylist')
+      },
+      {
+        path: "update/:id",
+        element: <PrivetRoute><Update></Update></PrivetRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/mylist/${params.id}`)
+
       },
       {
         path: "login",

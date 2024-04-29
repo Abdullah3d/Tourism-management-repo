@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../pages/Footer";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { GrUpdate } from "react-icons/gr";
+import { update } from "firebase/database";
 
 
 const MyList = () => {
@@ -10,6 +11,7 @@ const MyList = () => {
     const [users, setUsers] = useState(loadedMyLists);
 
     const handleDelete = id => {
+        console.log(id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -20,29 +22,25 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Your file has been deleted.",
-                    icon: "success"
-                });
-            }
-        });
         fetch(`http://localhost:5000/mylist/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    // Swal.fire({
-                    //     title: "Good job!",
-                    //     text: "Deleted successfully",
-                    //     icon: "success"
-                    //   });
+                    Swal.fire({
+                        title: "Good job!",
+                        text: "Deleted successfully",
+                        icon: "success"
+                      });
                     const remainingUsers = users.filter(list => list._id !== id);
                     setUsers(remainingUsers);
                 }
             })
     }
+    
+});
+}
     return (
         <div className="overflow-x-auto">
             <table className="table mb-10">
@@ -67,10 +65,10 @@ const MyList = () => {
                             <td>
                                 <button onClick={() => handleDelete(list._id)} className="btn">X</button>
                             </td>
-                            {/* <td>
-                                <button onClick={() => } className="btn"><GrUpdate />
-                                </button>
-                            </td> */}
+                            <td>
+                            
+                                <Link to={`/update/${list._id}`}><button className="btn">Update</button></Link>
+                            </td>
                         </tr>)
                     }
                 </tbody>
