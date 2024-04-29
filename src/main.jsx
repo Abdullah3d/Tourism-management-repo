@@ -18,6 +18,7 @@ import AuthProvider from './Provider/AuthProvider.jsx';
 import TouristsSpot from './components/TouristsSpot.jsx';
 import ViewTouristsSpot from './components/ViewTouristsSpot.jsx';
 import Update from './components/Update.jsx';
+import Countries from './pages/Countries.jsx';
 const router = createBrowserRouter([
 
   {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
       {
         path: "touristsSpot",
         element: <TouristsSpot></TouristsSpot>
+      },
+      {
+        path: "countries",
+        element: <Countries></Countries>,
+        loader: () => fetch('http://localhost:5000/country')
       },
       {
         path: "allTouristsSpot",

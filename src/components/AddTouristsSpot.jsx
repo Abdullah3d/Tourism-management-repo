@@ -140,7 +140,7 @@ const AddTouristsSpot = () => {
                             </label>
                             <label className="input-group">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name="average"
                                     placeholder="average cost"
                                     className="input input-bordered w-full"

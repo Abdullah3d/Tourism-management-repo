@@ -1,10 +1,14 @@
 import { useLoaderData } from "react-router-dom";
+import Spiner from "./Spiner";
 
 const ViewTouristsSpot = () => {
-    const views = useLoaderData();
-    console.log(views);
 
+    const views = useLoaderData();
+    if (!views) {
+        return <Spiner />
+    }
     return (
+
         <div className="card lg:card-side bg-base-100 shadow-xl">
             <div className="grid w-[600px] h-[400px]">
                 <figure><img src={views.photo} alt="Album" /></figure>

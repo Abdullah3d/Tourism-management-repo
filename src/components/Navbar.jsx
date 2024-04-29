@@ -20,6 +20,7 @@ console.log(user?.photoURL)
       <li><NavLink to="/allTouristsSpot">All Tourists Spot</NavLink></li>
       <li><NavLink to="/addTouristsSpot"> Add Tourists Spot</NavLink></li>
       <li><NavLink to="/myList">MyList</NavLink></li>
+      <li><NavLink to="/countries">Countries</NavLink></li>
     </>
   )
 

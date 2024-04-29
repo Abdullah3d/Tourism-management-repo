@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
+import Spiner from "../components/Spiner";
 
 
 
@@ -68,9 +69,12 @@ const Login = () => {
     useEffect(() => {
         setIsLoading(false);
     }, []);
+
+    if (isLoading) {
+        return <Spiner />
+    }
     return (
         <div>
-            {isLoading && <span className="loading loading-spinner loading-lg"></span>}
             <h1 className="text-3xl my-10 text-center" >Please Login</h1>
             <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
@@ -102,8 +106,8 @@ const Login = () => {
             }
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
             <div className="flex font-bold justify-center mt-5 gap-10">
-                <p className="text-5xl"><button onClick={handleGoogleSignIn} className=""><FcGoogle/></button></p>
-                <p className="text-5xl"><button onClick={handleGithubSignIn} className=""><VscGithubInverted/></button></p>
+                <p className="text-5xl"><button onClick={handleGoogleSignIn} className=""><FcGoogle /></button></p>
+                <p className="text-5xl"><button onClick={handleGithubSignIn} className=""><VscGithubInverted /></button></p>
             </div>
             <Footer></Footer>
         </div>

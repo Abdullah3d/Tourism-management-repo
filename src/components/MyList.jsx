@@ -2,13 +2,15 @@ import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../pages/Footer";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { GrUpdate } from "react-icons/gr";
-import { update } from "firebase/database";
+import Spiner from "./Spiner";
+
 
 
 const MyList = () => {
     const loadedMyLists = useLoaderData();
     const [users, setUsers] = useState(loadedMyLists);
+    const [isLoading, setIsLoading] = useState(false);
+
 
     const handleDelete = id => {
         console.log(id);
@@ -22,25 +24,29 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-        fetch(`http://localhost:5000/mylist/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    Swal.fire({
-                        title: "Good job!",
-                        text: "Deleted successfully",
-                        icon: "success"
-                      });
-                    const remainingUsers = users.filter(list => list._id !== id);
-                    setUsers(remainingUsers);
-                }
-            })
+                fetch(`http://localhost:5000/mylist/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            setIsLoading(false);
+                            Swal.fire({
+                                title: "Good job!",
+                                text: "Deleted successfully",
+                                icon: "success"
+                            });
+                            const remainingUsers = users.filter(list => list._id !== id);
+                            setUsers(remainingUsers);
+                        }
+                    })
+            }
+
+        });
     }
-    
-});
-}
+    if (isLoading) {
+        return <Spiner />
+    }
     return (
         <div className="overflow-x-auto">
             <table className="table mb-10">
@@ -66,7 +72,7 @@ const MyList = () => {
                                 <button onClick={() => handleDelete(list._id)} className="btn">X</button>
                             </td>
                             <td>
-                            
+
                                 <Link to={`/update/${list._id}`}><button className="btn">Update</button></Link>
                             </td>
                         </tr>)

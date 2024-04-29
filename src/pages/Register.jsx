@@ -3,12 +3,14 @@ import Footer from "./Footer";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Spiner from "../components/Spiner";
 
 const Register = () => {
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const { createUser } = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -65,7 +67,7 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user)
+                setIsLoading(true)
                 Swal.fire({
                     position: "center",
                     icon: "success",
@@ -84,6 +86,10 @@ const Register = () => {
                 });
             })
 
+    }
+
+    if (isLoading) {
+        return <Spiner />
     }
     return (
         <div>
