@@ -4,8 +4,8 @@ const ShowTouristsSpot = ({ tourist }) => {
 
     const {_id, name, country, description, location, season, travel, photo } = tourist;
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img className="w-[600px] h-[200px]" src={photo} alt="Movie" /></figure>
+        <div className="card card-side bg-base-100 shadow-xl flex flex-col lg:flex-row  ">
+           <img className="w-[400px] lg:w-[500px] object-cover lg:h-[300px]" src={photo} alt="Movie" />
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>

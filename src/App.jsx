@@ -11,10 +11,10 @@ function App() {
 
   return (
 
-    <div className='m-20'>
+    <div>
       <Banner></Banner>
       <h1 className='text-4xl font-bold text-center text-purple-500 p-5'>Tourist Spot : {tourists.length}</h1>
-      <div className='grid md:grid-cols-2 gap-4 mb-8'>
+      <div className='grid md:grid-cols-2 gap-4 mb-8 p-5'>
         {
           tourists.map(tourist => <ShowTouristsSpot key={tourist._id}
             tourist={tourist}  ></ShowTouristsSpot>)
