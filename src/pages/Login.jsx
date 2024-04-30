@@ -1,3 +1,5 @@
+import lottieAnimation from "./lottie.json";
+import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import { useContext, useEffect, useState } from "react";
@@ -5,6 +7,9 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
 import Spiner from "../components/Spiner";
+import { Tooltip } from 'react-tooltip'
+
+
 
 
 
@@ -75,6 +80,12 @@ const Login = () => {
     }
     return (
         <div>
+            <div className="flex justify-center">
+                <div className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3">
+                    <Lottie animationData={lottieAnimation} />
+                </div>
+            </div>
+
             <h1 className="text-3xl my-10 text-center" >Please Login</h1>
             <form onSubmit={handleLogin} className="md:w-3/4 lg:w-1/2 mx-auto">
                 <div className="form-control">
@@ -105,7 +116,7 @@ const Login = () => {
                 success && <p className="text-green-600 text-bold text-center">{success}</p>
             }
             <p className="text-center mt-4">Do not have an account? <Link className="text-blue-600 font-bold" to="/register">Register</Link></p>
-            <div className="flex font-bold justify-center mt-5 gap-10">
+            <div className="flex font-bold justify-center mb-8 mt-4 gap-10">
                 <p className="text-5xl"><button onClick={handleGoogleSignIn} className=""><FcGoogle /></button></p>
                 <p className="text-5xl"><button onClick={handleGithubSignIn} className=""><VscGithubInverted /></button></p>
             </div>

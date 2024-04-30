@@ -19,6 +19,7 @@ import TouristsSpot from './components/TouristsSpot.jsx';
 import ViewTouristsSpot from './components/ViewTouristsSpot.jsx';
 import Update from './components/Update.jsx';
 import Countries from './pages/Countries.jsx';
+import CountryName from './pages/CountryName.jsx';
 const router = createBrowserRouter([
 
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: "countries",
         element: <Countries></Countries>,
         loader: () => fetch('http://localhost:5000/country')
+      },
+      {
+        path: "countries/countryName",
+        element: <CountryName></CountryName>
       },
       {
         path: "allTouristsSpot",

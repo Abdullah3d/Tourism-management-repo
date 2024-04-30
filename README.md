@@ -8,6 +8,8 @@
 # You can add tourist spot or remove spot from here.
 # You can't inter some pages without login.
 # you can add tourist spot and update it.
+# I am added react lottie and react awesome reval.
+# I am implement dark light theme also.
 
 In the project directory, you can run:
 

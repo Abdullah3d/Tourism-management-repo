@@ -4,7 +4,7 @@ const Blog = () => {
 
         <div>
             <h1 className="text-4xl text-purple-600 font-bold p-5 text-center ">Blog </h1>
-            <div className="flex gap-5 flex-col lg:flex-row">
+            <div className="flex gap-5 flex-col lg:flex-row p-2">
                 <div>
                     <img className="w-[100%]" src="https://i.ibb.co/wLJ3pW7/1618245974-shutterstock-1186362172.jpg" alt="" />
                     <p className="text-xl font-medium">Rangamati, a picturesque district nestled in the Chittagong Hill Tracts of Bangladesh, boasts breathtaking landscapes of rolling hills, dense forests, and the tranquil waters of Kaptai Lake. Home to diverse indigenous communities, it offers a rich tapestry of culture and traditions. Visitors can explore vibrant markets, embark on boat rides, or trek through lush greenery, immersing themselves in the serene beauty and unique cultural heritage of the region.</p>
