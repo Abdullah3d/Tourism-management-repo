@@ -30,12 +30,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App></App>,
-        loader: () => fetch('http://localhost:5000/tourist')
+        loader: () => fetch('https://assignment-10-server-amber-rho.vercel.app/tourist')
       },
       {
-        path: "view/:id",
+        path: "/view/:id",
         element: <PrivetRoute><ViewTouristsSpot></ViewTouristsSpot></PrivetRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/tourist/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-10-server-amber-rho.vercel.app/tourist/${params.id}`)
       },
       {
         path: "touristsSpot",
@@ -44,16 +44,16 @@ const router = createBrowserRouter([
       {
         path: "countries",
         element: <Countries></Countries>,
-        loader: () => fetch('http://localhost:5000/country')
+        loader: () => fetch('https://assignment-10-server-amber-rho.vercel.app/country')
       },
       {
-        path: "countries/countryName",
+        path: "/countries/countries/countryName",
         element: <CountryName></CountryName>
       },
       {
         path: "allTouristsSpot",
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch('http://localhost:5000/tourist')
+        loader: () => fetch('https://assignment-10-server-amber-rho.vercel.app/tourist')
       },
       {
         path: "addTouristsSpot",
@@ -62,12 +62,12 @@ const router = createBrowserRouter([
       {
         path: "myList",
         element: <PrivetRoute><MyList></MyList></PrivetRoute>,
-        loader: () => fetch('http://localhost:5000/mylist')
+        loader: () => fetch('https://assignment-10-server-amber-rho.vercel.app/mylist')
       },
       {
-        path: "update/:id",
+        path: "/update/:id",
         element: <PrivetRoute><Update></Update></PrivetRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/mylist/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-10-server-amber-rho.vercel.app/mylist/${params.id}`)
 
       },
       {

@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import Footer from "../pages/Footer";
+import BounceEffect from "./BounceEffect";
 
 const AddTouristsSpot = () => {
 
@@ -35,7 +36,7 @@ const AddTouristsSpot = () => {
         console.log(addTourist);
 
         // Perform your fetch request to submit the form data
-        fetch("http://localhost:5000/addTourist", {
+        fetch("https://assignment-10-server-amber-rho.vercel.app/addTourist", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -66,10 +67,10 @@ const AddTouristsSpot = () => {
     return (
         <div>
             <div className="bg-[#ABABAB] p-24">
-                <h2 className="text-3xl text-center mb-5 font-extrabold">
+                <h2 className="text-3xl text-center mb-5 font-extrabold text-black">
                     Add Tourists spot
                 </h2>
-                <p className="text-center mb-8 font-semibold text-xl">
+                <p className="text-center mb-8 font-semibold text-xl text-black">
 
                     Popular tourist spots on Saint Martin's Island include the stunning Sunset Point, <br />vibrant Chera Dwip Beach, and the natural beauty of Blue Lagoon. Each <br />offers unique experiences amidst the island's captivating scenery.
                 </p>
@@ -245,6 +246,7 @@ const AddTouristsSpot = () => {
                     </div>
                 </form>
             </div>
+            <BounceEffect></BounceEffect>
             <Footer />
         </div>
     );

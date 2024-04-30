@@ -21,7 +21,7 @@ const TouristsSpot = () => {
 
 
         // send data to the server
-        fetch('http://localhost:5000/tourist', {
+        fetch('https://assignment-10-server-amber-rho.vercel.app/tourist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

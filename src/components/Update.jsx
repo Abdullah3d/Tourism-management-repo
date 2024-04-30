@@ -22,11 +22,9 @@ const Update = () => {
         const photo = form.photo.value;
 
         const  updatedSpot = { name, country, location, description, average, seasonality, travel, total, photo}
-
         console.log(updatedSpot);
-
-        fetch(`http://localhost:5000/mylist/${_id}`, {
-            method: 'PUT',
+        fetch(`https://assignment-10-server-amber-rho.vercel.app/mylist/${_id}`, {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
@@ -46,12 +44,11 @@ const Update = () => {
     }
     return (
         <div>
-            <div className="bg-[#ABABAB] p-24">
-                <h2 className="text-3xl text-center mb-5 font-extrabold">
+            <div className="bg-[#ABABAB] p-24 text-black">
+                <h2 className="text-3xl text-center mb-5 font-extrabold text-black">
                     Update
                 </h2>
-                <p className="text-center mb-8 font-semibold text-xl">
-
+                <p className="text-center text-black mb-8 font-semibold text-xl">
                     Popular tourist spots on Saint Martin's Island include the stunning Sunset Point, <br />vibrant Chera Dwip Beach, and the natural beauty of Blue Lagoon. Each <br />offers unique experiences amidst the island's captivating scenery.
                 </p>
                 <form onSubmit={handleUpdate}>

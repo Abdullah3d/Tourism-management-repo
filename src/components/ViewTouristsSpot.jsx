@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Spiner from "./Spiner";
+import Footer from "../pages/Footer";
 
 const ViewTouristsSpot = () => {
 
@@ -9,7 +10,8 @@ const ViewTouristsSpot = () => {
     }
     return (
 
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+       <div>
+         <div className="card lg:card-side bg-base-100 shadow-xl mb-8">
             <div className="grid w-[600px] h-[400px]">
                 <figure><img src={views.photo} alt="Album" /></figure>
             </div>
@@ -21,7 +23,10 @@ const ViewTouristsSpot = () => {
                     <p className="font-bold text-2xl">{views.travel}</p>
                     <p className="font-bold text-2xl">{views.description}</p>
             </div>
+            
         </div>
+        <Footer></Footer>
+       </div>
     );
 };
 
